@@ -13,6 +13,10 @@
   <img alt="Languages" src="https://img.shields.io/badge/i18n-PT%20%7C%20EN%20%7C%20ES-yellow">
 </p>
 
+<p align="center">
+  <img src="assets/screenshot.png" alt="RDDownloader interface" width="800">
+</p>
+
 ---
 
 ## ⬇️ Download (pronto para usar / ready to run)
