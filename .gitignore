@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Downloads em andamento
+*.part
+
+# Config local (contém sua chave API!)
+config.json
