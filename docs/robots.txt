@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gabrielcatarini.github.io/RDDownloader/sitemap.xml

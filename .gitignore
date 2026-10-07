@@ -6,13 +6,13 @@ __pycache__/
 venv/
 env/
 
-# Downloads em andamento
+# Downloads in progress
 *.part
 
-# Config local (contém sua chave API!)
+# Local config (contains your API key!)
 config.json
 
-# Builds do PyInstaller
+# PyInstaller builds
 build/
 dist/
 *.spec

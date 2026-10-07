@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Sistema de internacionalização (i18n) do RDDownloader.
+RDDownloader translations (i18n).
 
-Como adicionar um novo idioma:
-  1. Copie o bloco "en" abaixo para uma nova chave (ex.: "fr").
-  2. Traduza cada valor. NÃO mude as chaves nem os campos entre chaves {}.
-  3. Adicione o nome do idioma em LANGUAGE_NAMES.
-Pronto — ele aparecerá automaticamente no seletor de idiomas do programa.
+To add a language:
+  1. Copy the "en" block below under a new ISO 639-1 code (e.g. "fr").
+  2. Translate the values only. Do NOT change the keys or the {fields}.
+  3. Add the language name to LANGUAGE_NAMES.
+It then shows up automatically in the app's language selector.
 """
 
-# Idioma atual (alterado em tempo de execução por set_language)
+# Current language (changed at runtime by set_language)
 _current = "pt"
 
-# Nomes exibidos no seletor de idioma (sempre no próprio idioma)
+# Names shown in the language selector (each in its own language)
 LANGUAGE_NAMES = {
     "pt": "Português",
     "en": "English",
@@ -276,7 +276,7 @@ TRANSLATIONS = {
 
 
 def available_languages():
-    """Lista de (codigo, nome) para os idiomas disponíveis."""
+    """List of (code, name) for the available languages."""
     return [(code, LANGUAGE_NAMES.get(code, code)) for code in TRANSLATIONS]
 
 
@@ -291,7 +291,7 @@ def current_language():
 
 
 def detect_default(system_locale):
-    """Escolhe um idioma a partir do locale do sistema (ex.: 'pt_BR')."""
+    """Pick a language from the system locale (e.g. 'pt_BR')."""
     if not system_locale:
         return "en"
     prefix = system_locale.split("_")[0].lower()
@@ -299,7 +299,7 @@ def detect_default(system_locale):
 
 
 def tr(key, **kwargs):
-    """Traduz uma chave para o idioma atual, com fallback para inglês."""
+    """Translate a key into the current language, falling back to English."""
     table = TRANSLATIONS.get(_current, {})
     text = table.get(key)
     if text is None:

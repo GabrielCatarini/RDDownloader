@@ -1,54 +1,38 @@
-# Contribuindo / Contributing
+# Contributing
 
-Obrigado por ajudar o RDDownloader! 🎉
-Thanks for helping RDDownloader! 🎉
+Thanks for helping improve RDDownloader!
 
-## 🌍 Adicionar/melhorar uma tradução (a forma mais fácil de contribuir)
+## Development setup
 
-Adding/improving a translation is the easiest way to contribute.
+```bash
+./run.sh                     # creates .venv, installs deps, starts the app
+QT_QPA_PLATFORM=offscreen .venv/bin/python -m unittest discover -s tests -t .
+```
 
-1. Abra [`translations.py`](translations.py).
-2. Copie o bloco inteiro do idioma `"en"` (do `{` ao `}`).
-3. Cole como um novo idioma usando o código [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes),
-   por exemplo `"fr"` para francês:
-   ```python
-   "fr": {
-       "app_title": "RDDownloader — Real-Debrid",
-       "group_config": "Paramètres",
-       ...
-   },
-   ```
-4. Traduza **apenas os valores** (lado direito). **Não** altere as chaves nem o
-   texto entre `{}` — são variáveis (ex.: `{pct}`, `{name}`, `{size}`).
-5. Adicione o nome do idioma em `LANGUAGE_NAMES`:
-   ```python
-   LANGUAGE_NAMES = {
-       "pt": "Português",
-       "en": "English",
-       "es": "Español",
-       "fr": "Français",
-   }
-   ```
-6. Rode o programa — o idioma aparece sozinho no seletor. Abra um Pull Request!
+- Keep the code simple and in the style of the surrounding file.
+- Every user-visible string goes through `tr("key")`, so there is no hard-coded UI text.
+- If you change the UI, regenerate the icon, screenshot and social preview with
+  `python3 tools/make_assets.py`. It uses demo data only.
 
-> Translate only the **values** (right side). Do **not** change the keys or the
-> text inside `{}` — those are runtime variables.
+## Adding a translation
 
-## 🐛 Reportar bugs / Report bugs
+1. Open [`translations.py`](translations.py) and copy the whole `"en"` block.
+2. Paste it under a new [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code, e.g. `"fr"`.
+3. Translate **only the values**. Don't change the keys or anything inside `{}`, because those are runtime variables (`{pct}`, `{name}`, …).
+4. Add the language name to `LANGUAGE_NAMES` (e.g. `"fr": "Français"`).
 
-Abra uma *issue* descrevendo o que aconteceu, o que esperava, e (se possível) a
-mensagem de erro do terminal.
+The new language then shows up automatically in the selector.
 
-## 💡 Ideias de funcionalidades / Feature ideas
+## Releasing
 
-Abra uma issue com a etiqueta `enhancement`. Sugestões bem-vindas!
+Bump `APP_VERSION` in `rddownloader.py`, then push a tag:
 
-## 🧑‍💻 Estilo de código / Code style
+```bash
+git tag v1.2.0 && git push origin v1.2.0
+```
 
-- Mantenha o código simples e legível (segue o estilo do arquivo).
-- Strings visíveis ao usuário **sempre** passam por `tr("chave")` — nada de
-  texto fixo na interface.
-- Rode os testes antes do PR:
-  `QT_QPA_PLATFORM=offscreen python3 -m unittest discover -s tests -t .`
-- Mudou o visual? Regere o ícone e a screenshot com
-  `python3 tools/make_assets.py` (usa só dados de demonstração).
+GitHub Actions runs the tests, builds the Windows and Linux executables and publishes the release.
+
+## Bugs and ideas
+
+Open an [issue](https://github.com/GabrielCatarini/RDDownloader/issues). For bugs, include what happened, what you expected and any error message.
