@@ -1,4 +1,8 @@
-<h1 align="center">🧲 RDDownloader</h1>
+<p align="center">
+  <img src="assets/icon.png" alt="" width="96">
+</p>
+
+<h1 align="center">RDDownloader</h1>
 
 <p align="center">
   <b>Baixe torrents e magnets pela sua conta Real-Debrid — sem abrir o site.</b><br>
@@ -6,120 +10,124 @@
 </p>
 
 <p align="center">
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white">
-  <img alt="Qt" src="https://img.shields.io/badge/GUI-PyQt5-41cd52?logo=qt&logoColor=white">
-  <img alt="License" src="https://img.shields.io/badge/License-MIT-green">
-  <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-orange">
+  <a href="../../releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/GabrielCatarini/RDDownloader?color=7c6cff"></a>
+  <img alt="Windows | Linux" src="https://img.shields.io/badge/Windows%20%7C%20Linux-ready-34d399">
   <img alt="Languages" src="https://img.shields.io/badge/i18n-PT%20%7C%20EN%20%7C%20ES-yellow">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-green">
 </p>
 
 <p align="center">
-  <img src="assets/screenshot.png" alt="RDDownloader interface" width="800">
+  <img src="assets/screenshot.png" alt="RDDownloader" width="860">
 </p>
 
 ---
 
-## ⬇️ Download (pronto para usar / ready to run)
+## ⬇️ Baixar — nada para instalar
 
-Não quer instalar Python? Baixe o executável na página de
-**[Releases](../../releases)**:
+| Sistema | Download | Como abrir |
+|---|---|---|
+| 🪟 **Windows 10/11** | [**RDDownloader-windows.exe**](https://github.com/GabrielCatarini/RDDownloader/releases/latest/download/RDDownloader-windows.exe) | Dois cliques. Pronto. |
+| 🐧 **Linux** | [**RDDownloader-linux**](https://github.com/GabrielCatarini/RDDownloader/releases/latest/download/RDDownloader-linux) | Botão direito → *Propriedades* → *Permitir executar*, depois dois cliques (ou `chmod +x RDDownloader-linux`). |
 
-- 🪟 **Windows** — `RDDownloader-windows.exe` (dê dois cliques)
-- 🐧 **Linux** — `RDDownloader-linux` (`chmod +x` e execute)
+Funciona num PC recém-formatado: o executável já traz tudo dentro (Python, Qt
+e bibliotecas). Não precisa instalar Python nem nada.
 
-> No Windows, o SmartScreen pode avisar por ser um app novo sem assinatura —
-> clique em *Mais informações → Executar assim mesmo*.
+> **Windows mostrou "O Windows protegeu o computador"?** É o SmartScreen avisando
+> que o app é novo e não tem assinatura paga. Clique em **Mais informações →
+> Executar assim mesmo**. O código é aberto e o `.exe` é compilado
+> automaticamente pelo GitHub Actions a partir deste repositório.
 
----
+## 🚀 Primeiro uso (1 minuto)
 
-## 🇧🇷 Português
+1. Entre na sua conta e copie sua chave em **https://real-debrid.com/apitoken**
+2. Abra o RDDownloader, cole a chave e clique em **Salvar e verificar**
+3. Cole um link **magnet** e clique em **Baixar** — ou arraste um `.torrent` para a janela
 
-Cole um link **magnet** ou abra um arquivo **.torrent**. O programa envia para o
-Real-Debrid (que baixa nos servidores deles), pega os links diretos e baixa os
-arquivos para a pasta que você escolher — com barra de progresso e velocidade.
+Os arquivos vão para `Downloads/RealDebrid` (dá para trocar em **Configurações**).
 
-### ✨ Recursos
+## ✨ Recursos
 
-- 🧲 Suporte a **magnet** e arquivos **.torrent**
-- 🖱️ **Arraste e solte** o .torrent (ou um magnet) direto na janela
-- 🌍 **Multi-idioma**: Português, English, Español (troca em tempo real)
-- 📊 Barra de progresso, tamanho e velocidade por download
+- 🧲 **Magnet** e arquivos **.torrent** (vários de uma vez)
+- 🖱️ **Arraste e solte** `.torrent` ou magnet em qualquer lugar da janela
+- 📋 Copiou um magnet? Ao voltar para a janela ele já aparece pronto para baixar
+- 📊 Progresso, **velocidade real e tempo restante** de cada download
+- ⏸️ **Pausar / retomar** (continua de onde parou) e **tentar novamente** em caso de erro
+- 🔁 Recupera sozinho de quedas de internet
 - ⚡ Vários downloads **simultâneos** (configurável)
-- 🔔 **Notificação** quando um download termina
-- 💾 Chave API e preferências salvas — configure só uma vez
-- 🔒 Tudo roda **localmente**; sua chave nunca sai do seu computador
+- ✅ Verifica a conta automaticamente e mostra até quando seu premium vale
+- 🔔 Notificação quando um download termina
+- 🌍 Português, English, Español (troca na hora)
+- 🌙 Interface escura moderna
 
-### 🚀 Como usar
-
-1. Pegue sua chave em **https://real-debrid.com/apitoken**
-2. Instale as dependências e rode:
-   ```bash
-   pip install -r requirements.txt
-   python3 rddownloader.py
-   ```
-   (ou dê dois cliques em `iniciar.sh`)
-3. Cole a **Chave API**, clique em **Verificar conta** e escolha a **pasta**.
-4. Cole um **magnet** (ou arraste um `.torrent`) e pronto.
-
-> A barra vai de **0–50%** enquanto o Real-Debrid prepara o arquivo e de
-> **50–100%** durante o download para o seu computador.
+> A barra vai de **0–50%** enquanto o Real-Debrid prepara o arquivo nos
+> servidores dele e de **50–100%** durante o download para o seu computador.
 
 ---
 
 ## 🇺🇸 English
 
-Paste a **magnet** link or open a **.torrent** file. The app sends it to
-Real-Debrid (which downloads it on their servers), grabs the direct links and
-downloads the files to the folder you pick — with progress bar and speed.
+**Download:** [Windows (.exe)](https://github.com/GabrielCatarini/RDDownloader/releases/latest/download/RDDownloader-windows.exe) ·
+[Linux](https://github.com/GabrielCatarini/RDDownloader/releases/latest/download/RDDownloader-linux) —
+self-contained, nothing to install. Double-click and go.
 
-### Features
+1. Get your API key at **https://real-debrid.com/apitoken**
+2. Paste it in RDDownloader and click **Save & verify**
+3. Paste a **magnet** link and click **Download** — or drop a `.torrent` onto the window
 
-- 🧲 **Magnet** and **.torrent** support
-- 🖱️ **Drag & drop** a .torrent (or magnet) onto the window
-- 🌍 **Multi-language**: English, Português, Español (live switching)
-- 📊 Per-download progress, size and speed
-- ⚡ Configurable **simultaneous** downloads
-- 🔔 **Notification** when a download finishes
-- 💾 API key and preferences saved locally
+Features: magnets and .torrent files, drag & drop, real-time speed and ETA,
+pause/resume with byte-level resume, automatic retry on network drops,
+simultaneous downloads, account status, notifications, PT/EN/ES UI.
 
-### Quick start
-
-```bash
-pip install -r requirements.txt
-python3 rddownloader.py
-```
-
-Get your API key at **https://real-debrid.com/apitoken**, paste it, verify the
-account, choose a folder, then paste a magnet or open a `.torrent`.
+On Windows, SmartScreen may warn because the app is new and unsigned: click
+*More info → Run anyway*. The `.exe` is built by GitHub Actions from this repo.
 
 ---
 
-## 📦 Requisitos / Requirements
+## 🧑‍💻 Rodar pelo código-fonte / Run from source
 
-- Python 3.8+
-- [PyQt5](https://pypi.org/project/PyQt5/) e [requests](https://pypi.org/project/requests/)
-  ```bash
-  pip install -r requirements.txt
-  ```
-- Uma conta **Real-Debrid premium** / A **premium Real-Debrid** account
+Dê dois cliques em **`iniciar.bat`** (Windows) ou rode **`./iniciar.sh`**
+(Linux/macOS). Na primeira vez ele prepara tudo sozinho: no Windows instala o
+Python via `winget` se precisar, cria um ambiente isolado em `.venv` e
+instala as dependências.
 
-## 🌍 Adicionar um idioma / Add a language
+Manual:
 
-É fácil! Veja [`CONTRIBUTING.md`](CONTRIBUTING.md). Resumindo: copie um bloco em
-[`translations.py`](translations.py), traduza os valores (não as chaves) e abra
-um Pull Request. O novo idioma aparece sozinho no seletor.
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt      # Windows: .venv\Scripts\pip
+.venv/bin/python rddownloader.py
+```
+
+Testes:
+
+```bash
+QT_QPA_PLATFORM=offscreen python3 -m unittest discover -s tests -t .
+```
+
+Para publicar uma nova versão, crie uma tag `vX.Y.Z` e envie (`git push --tags`):
+o GitHub Actions testa, compila os executáveis e cria o Release.
 
 ## 🔐 Privacidade / Privacy
 
-A chave API e as configurações ficam só no seu computador, em
-`~/.config/rddownloader/config.json`. O programa fala **apenas** com a API
-oficial do Real-Debrid.
+Sua chave API e as preferências ficam **só no seu computador**, em
+`~/.config/rddownloader/config.json` (no Windows: `C:\Users\<você>\.config\rddownloader`),
+com permissão apenas para o seu usuário. O programa fala **apenas** com a API
+oficial do Real-Debrid. Sem telemetria.
+
+Your API key stays on your computer only. The app talks exclusively to the
+official Real-Debrid API. No telemetry.
+
+## 🌍 Traduções / Translations
+
+Quer o RDDownloader no seu idioma? Veja [`CONTRIBUTING.md`](CONTRIBUTING.md):
+basta copiar um bloco de [`translations.py`](translations.py) e traduzir.
 
 ## ⚖️ Aviso / Disclaimer
 
 Ferramenta para uso pessoal com sua própria conta Real-Debrid. Baixe apenas
-conteúdo que você tem o direito de acessar. / Personal-use tool for your own
-Real-Debrid account. Only download content you are allowed to access.
+conteúdo que você tem o direito de acessar. Este projeto não é afiliado ao
+Real-Debrid. / Personal-use tool for your own Real-Debrid account. Only
+download content you are allowed to access. Not affiliated with Real-Debrid.
 
 ## 📄 Licença / License
 

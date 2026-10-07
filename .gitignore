@@ -11,3 +11,8 @@ env/
 
 # Config local (contém sua chave API!)
 config.json
+
+# Builds do PyInstaller
+build/
+dist/
+*.spec

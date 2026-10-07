@@ -41,11 +41,14 @@ mensagem de erro do terminal.
 
 ## 💡 Ideias de funcionalidades / Feature ideas
 
-Veja a seção de ideias no final do README ou abra uma issue com a etiqueta
-`enhancement`. Sugestões bem-vindas!
+Abra uma issue com a etiqueta `enhancement`. Sugestões bem-vindas!
 
 ## 🧑‍💻 Estilo de código / Code style
 
 - Mantenha o código simples e legível (segue o estilo do arquivo).
 - Strings visíveis ao usuário **sempre** passam por `tr("chave")` — nada de
   texto fixo na interface.
+- Rode os testes antes do PR:
+  `QT_QPA_PLATFORM=offscreen python3 -m unittest discover -s tests -t .`
+- Mudou o visual? Regere o ícone e a screenshot com
+  `python3 tools/make_assets.py` (usa só dados de demonstração).
